@@ -3,3 +3,5 @@ socket tutorial
 https://docs.oracle.com/javase/tutorial/networking/sockets/
 http://www.java2s.com/Code/Java/Network-Protocol/StringbasedcommunicationbetweenSocket.htm
 https://stackoverflow.com/questions/4637362/communication-via-internet-in-java
+--tutorial seguido:
+https://www.youtube.com/watch?v=3wJTI9LMOsk
