@@ -4,7 +4,7 @@ import java.net.*;
 public class Client {
 
     public static void main(String[] args){
-        final String HOST="127.0.0.1";
+        final String HOST="10.2.1.184";
         final int PUERTO = 5000;
         DataInputStream in;
         DataOutputStream out;
