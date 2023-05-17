@@ -1,13 +1,15 @@
 import java.io.*;
 import java.net.*;
+import java.util.Scanner;
 
 public class Client {
 
     public static void main(String[] args){
-        final String HOST="10.2.1.184";
+        final String HOST="nose";
         final int PUERTO = 5000;
         DataInputStream in;
         DataOutputStream out;
+        Scanner scan = new Scanner(System.in);
 
         try {
             Socket sc = new Socket(HOST, PUERTO);
@@ -15,10 +17,13 @@ public class Client {
             in = new DataInputStream(sc.getInputStream());
             out = new DataOutputStream(sc.getOutputStream());
 
-            out.writeUTF("Hola desde el cliente");
-
-            System.out.println("Desde el server" + in.readInt());
-
+            System.out.println("Connection stablished");
+            String sendMessage = "";
+            while(sendMessage.equals("desconectar")){
+                sendMessage = scan.nextLine();
+                out.writeUTF(sendMessage);
+                System.out.println(in.readInt());
+            }
             sc.close();
 
             System.out.println(in.readUTF());

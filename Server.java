@@ -21,11 +21,11 @@ public class Server{
                 in = new DataInputStream(sc.getInputStream());
                 out = new DataOutputStream(sc.getOutputStream());
 
-                
-                //quedarse a la espera
-                System.out.println(in.readUTF());
-
-                out.writeUTF("hola desde el server");
+                String recivedMessage = "";
+                while(recivedMessage.equals("desconectar")){
+                    recivedMessage = in.readUTF();
+                    out.writeUTF(recivedMessage);
+                }
 
                 sc.close();
 
